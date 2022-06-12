@@ -9,6 +9,9 @@ sudo apt install -y cmake libboost-program-options-dev libdrm-dev libexif-dev
 ```
 Building libcamera-hello
 ```
+cd /path_to_install/
+git clone https://github.com/peytonicmaster6/libcamera-apps.git
+cd libcamera-apps
 mkdir build
 cd build
 cmake .. -DENABLE_DRM=1 -DENABLE_X11=1 -DENABLE_QT=1 -DENABLE_OPENCV=0 -DENABLE_TFLITE=0
