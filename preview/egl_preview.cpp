@@ -441,6 +441,10 @@ void EglPreview::makeBuffer(int fd, size_t size, StreamInfo const &info, Buffer 
 	buffer.fd = fd;
 	buffer.size = size;
 	buffer.info = info;
+	
+	//std::cout << "stride: " << info.stride << "\n";
+	//std::cout << "width: " << info.width << "\n";
+	//std::cout << "height: " << info.height << "\n";
 
 	EGLint encoding, range;
 	get_colour_space_info(info.colour_space, encoding, range);
@@ -466,7 +470,6 @@ void EglPreview::makeBuffer(int fd, size_t size, StreamInfo const &info, Buffer 
 	EGLImage image = eglCreateImageKHR(egl_display_, EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, NULL, attribs);
 	if (!image)
 		throw std::runtime_error("failed to import fd " + std::to_string(fd));
-
 	glGenTextures(1, &buffer.texture);
 	glBindTexture(GL_TEXTURE_EXTERNAL_OES, buffer.texture);
 	glTexParameteri(GL_TEXTURE_EXTERNAL_OES, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
