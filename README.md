@@ -27,8 +27,8 @@ To see the barrel distortion work correctly, run this command:
 ./libcamera-hello --width 960 --height 1080 -p 0,0,1920,1080 
 ```
 
+DRM-leasing coming soon <br>
 
-DRM-leasing coming soon
 License
 -------
 
