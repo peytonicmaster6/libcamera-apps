@@ -479,11 +479,11 @@ void EglPreview::makeBuffer(int fd, size_t size, StreamInfo const &info, Buffer 
 	eglDestroyImageKHR(egl_display_, image);
 }
 
-void EglPreview::SetInfoText(const std::string &text)
-{
-	if (!text.empty())
-		XStoreName(display_, window_, text.c_str());
-}
+//void EglPreview::SetInfoText(const std::string &text)
+//{
+//	if (!text.empty())
+//		XStoreName(display_, window_, text.c_str());
+//}
 
 void EglPreview::Show(int fd, libcamera::Span<uint8_t> span, StreamInfo const &info)
 {
