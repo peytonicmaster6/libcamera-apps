@@ -817,11 +817,11 @@ void LibcameraApp::previewThread()
 		}
 		preview_frames_displayed_++;
 		preview_->Show(fd, span, info);
-		if (!options_->info_text.empty())
-		{
-			std::string s = frame_info.ToString(options_->info_text);
-			preview_->SetInfoText(s);
-		}
+		//if (!options_->info_text.empty())
+		//{
+		//	std::string s = frame_info.ToString(options_->info_text);
+		//	preview_->SetInfoText(s);
+		//}
 	}
 }
 
